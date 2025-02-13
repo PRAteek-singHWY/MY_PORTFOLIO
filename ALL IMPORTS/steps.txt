@@ -1,0 +1,30 @@
+*** Initial Packages ***
+
+1-> npm create vite@latest ./ -- --template react
+2-> hit 'y' and give package name '3_PORTFOLIO_D' 
+3-> "install tailwind " npm install -D tailwindcss 
+ npx tailwindcss init
+4-> imported the zipped 
+public -> 3d desktop model
+   &
+  folders
+assets --> icons and images for the application 
+5-> constants (whole content about portfolio edit it over here and it reflects on your website)
+6-> utils-->motion (framer-motion)
+7-> import { BrowserRouter } from 'react-router-dom' -> for routing
+9-> importing all components
+10-> chekcing i fthis li is currently active 
+ <li className={`${
+                active === link.title 
+                ? "text-white" : "text-secondary"
+              } hover:text-purple-700`} >
+
+11->sm:hidden --> The sm:hidden class in Tailwind CSS is a utility class that is used to hide an element on screens that are equal to or larger than the small (sm) breakpoint.
+
+12-> hero-image
+(the dynamic 3d effect background image)
+ is coming that because we used it in 
+ {--app.jsx--} cause we have mentioned it in our {--background-image--} in our {--tailwind.config.js--} file
+13-> className = {`${styles.paddingY}`} this way of adding D--classes is called dynamic template string way.
+
+14-> first three.js react-3 fiber canvas in computer
