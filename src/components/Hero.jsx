@@ -26,9 +26,11 @@ const Hero = () => {
             <span className="text-blue-500">e</span>
             <span className="text-red-500">K</span>{" "}
           </h1>
-          <p className={`${styles.heroSubText}mt-2 text-white-100`}>
-            I'm a Full Stack Web-Developer, <br className="sm:block hidden" />
-            developin' responsive, beautiful, 3D & Ai integrated Web Apps.
+          <p className={`${styles.heroSubText} mt-2 text-white-100`}>
+            I'm a Full Stack Developer & <br className="sm:block hidden" />
+            Open Source Contributor, developing{" "}
+            <br className="sm:block hidden" />
+            responsive, 3D & AI integrated Web Apps.
           </p>
         </div>
       </div>
