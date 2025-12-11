@@ -69,7 +69,7 @@ const ComputersCanvas = () => {
         />
         <Computers isMobile={isMobile} />
       </Suspense>
-      
+
       {/* <Preload all /> <-- REMOVED THIS LINE TO FIX THE ERROR */}
     </Canvas>
   );

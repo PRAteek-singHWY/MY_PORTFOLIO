@@ -60,7 +60,7 @@ const BallCanvas2 = ({ icon }) => {
         <Ball_2 imgUrl={icon} />
         {/* <Ball_2 imgUrl={icon} /> */}
       </Suspense>
-      <Preload all />
+      {/* <Preload all /> */}
     </Canvas>
   );
 };
