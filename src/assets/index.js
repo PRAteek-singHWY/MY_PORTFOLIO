@@ -39,10 +39,27 @@ import email from "./email.png";
 import call from "./call.png";
 import twit from "./twit.png";
 import access from "./swirl.svg";
+import ChatApp from "./chat-rooms.png";
+import Brain from "./Sec2ndBrain.png";
+import DevQuera from "./DevQuera.png";
+import WandR from "./WandR.jpeg";
+import opensource from "./opensource.png";
+import nextjs from "./nextJs.png";
+import android from "./android.webp";
+import redis from "./redis.png";
+import blockchain from "./blockchain.png";
+import solana from "./solana.png";
+import bitcoin from "./bitcoin.webp";
 export {
   PsLogo,
+  solana,
   p,
+  android,
+  blockchain,
+  redis,
+  WandR,
   backend,
+  bitcoin,
   creator,
   mobile,
   web,
@@ -50,8 +67,11 @@ export {
   loc,
   twit,
   call,
+  DevQuera,
   email,
+  Brain,
   menu,
+  opensource,
   close,
   css,
   nextJS,
@@ -72,6 +92,7 @@ export {
   shopify,
   starbucks,
   tesla,
+  nextjs,
   carrent,
   jobit,
   tripguide,
@@ -81,4 +102,5 @@ export {
   MuZiK,
   PortFolio,
   Threads,
+  ChatApp,
 };

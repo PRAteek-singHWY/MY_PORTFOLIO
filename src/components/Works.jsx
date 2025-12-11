@@ -56,7 +56,7 @@ const ProjectCard = ({
   it here with the help of if and else) */}
 
               <p className="  mt-2.5 text-yellow-500 font-bold text-[10.5px] ">
-                <b>{deprecated ? "(DEPRECATED VERSION)" : ""}</b>
+                <b>{deprecated ? "(DEPRECATED VERSION)" : "(2025 version)"}</b>
               </p>
               <p className=" mr-5 mt-1.5 text-green-500 font-bold text-[13.5px] ">
                 <b>{upcoming ? " (COMING SOON)" : ""}</b>
@@ -137,7 +137,7 @@ const Works = () => {
       </div>
       <div className="mt-20 flex flex-wrap gap-7">
         {projects.map((project, index) => (
-          <ProjectCard key={`project-${index}`} index={index} {...project} />
+          <ProjectCard key={`project0-${index}`} index={index} {...project} />
         ))}
       </div>
     </>
