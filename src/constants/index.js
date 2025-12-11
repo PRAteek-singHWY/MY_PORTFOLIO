@@ -128,22 +128,10 @@ const technologies = [
   },
 ];
 const technologies_starter = [
-  {
-    name: "HTML 5",
-    icon: html, // Assuming 'html' icon is defined
-  },
-  {
-    name: "CSS 3",
-    icon: css, // Assuming 'css' icon is defined
-  },
-  {
-    name: "figma",
-    icon: figma, // Assuming 'figma' icon is defined
-  },
-  {
-    name: "JavaScript",
-    icon: javascript, // Assuming 'javascript' icon is defined
-  },
+  
+  
+  
+  
   {
     name: "TypeScript",
     icon: typescript, // Assuming 'typescript' icon is defined
