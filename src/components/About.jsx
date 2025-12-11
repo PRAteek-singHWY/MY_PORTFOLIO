@@ -56,16 +56,14 @@ const About = () => {
         className="mt-4 text-secondary text-[17px] max-w-3xl leading-[25px]"
         variants={fadeIn("", "", 0.1, 1)}
       >
-        I am Prateek Singh. I am 19 years old and have been coding for the past
-        4 years. I love learning new tools and tech. I am a curious and Fully
-        stacked web-developer developing web apps using M-E-R-N STACK, react.js,
-        three.js, tailwind, and multiple Libraries ( TAILWIND CSS,
-        FRAMER-MOTION, EMAIL-js , MATERIAL-ui ) My interests include WEB-3, AI,
-        NEUROLOGY and OuteR SpacE (galaxies, celestial bodies). I started My
-        coding journey in class 11th and it's been 4.5 years. iT'S been 8 months
-        when i started my WeB-DeV Journey, starting from Udemy Course to
-        creating projects and imaginative and interactive ui's with my learnings
-        . My D-E-V journey is going So good and m enjoying learning so Much.
+        I am a Full-Stack Developer and Creative Technologist with over 4 years
+        of coding experience. I specialize in building scalable,
+        high-performance web applications using the MERN Stack, Next.js 16, and
+        TypeScript. My passion lies at the intersection of AI Engineering and
+        Interactive 3D Web, leveraging tools like Three.js and RAG Pipelines to
+        create immersive digital experiences. Currently, I am deep-diving into
+        System Design, Web3, and Neurology, constantly pushing the boundaries of
+        what's possible on the web.
       </motion.p>
       <div className="mt-20 flex flex-wrap gap-10">
         {services.map((service, index) => (
