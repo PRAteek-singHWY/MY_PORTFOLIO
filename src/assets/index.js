@@ -50,7 +50,15 @@ import redis from "./redis.png";
 import blockchain from "./blockchain.png";
 import solana from "./solana.png";
 import bitcoin from "./bitcoin.webp";
+import python from "./tech/python.png";
+import postgres from "./tech/postgres.png";
+import pgvector from "./tech/pgvector.png";
+import pytest from "./tech/pytest.png";
 export {
+  python,
+  postgres,
+  pgvector,
+  pytest,
   PsLogo,
   solana,
   p,

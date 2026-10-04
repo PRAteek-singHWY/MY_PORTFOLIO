@@ -1,4 +1,31 @@
-@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700;800;900&family=Poppins:wght@300;400;500;600;700;800;900&display=swap");
+
+/*
+ * Colours. Every colour on the site reads from these variables (the original
+ * dark purple look, restored 4 Oct 2026 as the only theme). Values are
+ * space-separated RGB so Tailwind can apply opacity (bg-accent/40).
+ * --chart-* and --three-* are hex for SVG and Three.js, which cannot read rgb().
+ */
+:root {
+  --c-primary: 5 8 22;
+  --c-tertiary: 21 16 48;
+  --c-black-100: 16 13 37;
+  --c-black-200: 9 3 37;
+  --c-card: 42 31 102;
+  --c-secondary: 170 166 195;
+  --c-ink: 255 255 255;
+  --c-ink-soft: 243 243 243;
+  --c-accent: 139 124 246;
+  --c-accent-dim: 109 91 216;
+  --c-on-accent: 255 255 255;
+  --chart-series: #9085e9;
+  --chart-surface: #12161c;
+  --chart-ink: #e9ebee;
+  --chart-muted: #858d99;
+  --chart-grid: #242b34;
+  --three-star: #f272c8;
+  --three-light: #8b7cf6;
+}
 
 @tailwind base;
 @tailwind components;
@@ -11,6 +38,11 @@
   font-family: "Poppins", sans-serif;
   scroll-behavior: smooth;
   color-scheme: dark;
+}
+
+.journey-date {
+  color: rgb(var(--c-secondary));
+  font-size: 14px;
 }
 
 .hash-span {
@@ -33,33 +65,15 @@
 
 
 .purple-gradient {
-  background: #c828ec; /* fallback for old browsers */
-  background: -webkit-linear-gradient(
-    to right,
-    #bf45ec,
-    #ae17be
-  ); /* Chrome 10-25, Safari 5.1-6 */
-  background: linear-gradient(
-    to right,
-    #9759ae,
-    #410549
-  ); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+  background: linear-gradient(to right, rgb(var(--c-card)), rgb(var(--c-black-200)));
 }
 
 .violet-gradient {
-  background: #804dee;
-  background: linear-gradient(-90deg, #804dee 0%, rgba(60, 51, 80, 0) 100%);
-  background: -webkit-linear-gradient(
-    -90deg,
-    #804dee 0%,
-    rgba(60, 51, 80, 0) 100%
-  );
+  background: linear-gradient(-90deg, rgb(var(--c-accent)) 0%, rgb(var(--c-accent) / 0) 100%);
 }
 
 .green-pink-gradient {
-  background: "#00cea8";
-  background: linear-gradient(90.13deg, #00cea8 1.9%, #bf61ff 97.5%);
-  background: -webkit-linear-gradient(-90.13deg, #00cea8 1.9%, #bf61ff 97.5%);
+  background: linear-gradient(90.13deg, rgb(var(--c-accent)) 1.9%, rgb(var(--c-accent-dim) / 0.25) 97.5%);
 }
 
 .orange-text-gradient {
@@ -238,4 +252,27 @@
       -1.8em 1.8em 0 0em rgba(255, 255, 255, 0.5),
       -2.6em 0em 0 0em rgba(255, 255, 255, 0.7), -1.8em -1.8em 0 0em #ffffff;
   }
+}
+html {
+  background: rgb(var(--c-primary));
+}
+
+/* The hero's wave artwork, behind the text. */
+/* No isolation here: the navbar lives inside this wrapper and must keep its
+   z-20 against the rest of the page. The z-index: -1 art still paints above the
+   page background because the root wrapper is its stacking context. */
+.hero-pattern {
+  position: relative;
+}
+.hero-pattern::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  background: url("./assets/herobg.png") center / cover no-repeat;
+}
+
+.font-display {
+  font-family: "Playfair Display", Georgia, serif;
+  letter-spacing: -0.01em;
 }

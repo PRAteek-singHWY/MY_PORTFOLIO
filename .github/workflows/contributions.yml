@@ -1,0 +1,30 @@
+name: Refresh contribution data
+on:
+  schedule:
+    - cron: "0 3 * * 1" # Mondays 03:00 UTC
+  workflow_dispatch:
+  push:
+    branches: [main]
+    paths-ignore:
+      - "src/data/contributions.json"
+permissions:
+  contents: write
+jobs:
+  refresh:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with: { node-version: "20" }
+      - run: node scripts/fetch-contributions.mjs
+        env:
+          # Fine-grained PAT, public repo read only. Without it the script
+          # exits cleanly and the committed JSON stays as it is.
+          GH_TOKEN: ${{ secrets.CONTRIB_TOKEN }}
+      - name: Commit if changed
+        run: |
+          git config user.name  "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git add src/data/contributions.json
+          git diff --staged --quiet || git commit -m "chore: refresh contribution data"
+          git push

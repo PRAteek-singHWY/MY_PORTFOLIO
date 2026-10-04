@@ -1,0 +1,299 @@
+{
+  "generatedAt": "2026-09-28T13:05:13Z",
+  "source": "GitHub API. Public repositories only; commits GitHub attributes to the account.",
+  "totalsByMonth": [
+    {
+      "month": "2022-01",
+      "commits": 0
+    },
+    {
+      "month": "2022-02",
+      "commits": 0
+    },
+    {
+      "month": "2022-03",
+      "commits": 0
+    },
+    {
+      "month": "2022-04",
+      "commits": 0
+    },
+    {
+      "month": "2022-05",
+      "commits": 0
+    },
+    {
+      "month": "2022-06",
+      "commits": 0
+    },
+    {
+      "month": "2022-07",
+      "commits": 0
+    },
+    {
+      "month": "2022-08",
+      "commits": 0
+    },
+    {
+      "month": "2022-09",
+      "commits": 0
+    },
+    {
+      "month": "2022-10",
+      "commits": 0
+    },
+    {
+      "month": "2022-11",
+      "commits": 0
+    },
+    {
+      "month": "2022-12",
+      "commits": 0
+    },
+    {
+      "month": "2023-01",
+      "commits": 0
+    },
+    {
+      "month": "2023-02",
+      "commits": 0
+    },
+    {
+      "month": "2023-03",
+      "commits": 0
+    },
+    {
+      "month": "2023-04",
+      "commits": 0
+    },
+    {
+      "month": "2023-05",
+      "commits": 2
+    },
+    {
+      "month": "2023-06",
+      "commits": 3
+    },
+    {
+      "month": "2023-07",
+      "commits": 10
+    },
+    {
+      "month": "2023-08",
+      "commits": 0
+    },
+    {
+      "month": "2023-09",
+      "commits": 0
+    },
+    {
+      "month": "2023-10",
+      "commits": 0
+    },
+    {
+      "month": "2023-11",
+      "commits": 0
+    },
+    {
+      "month": "2023-12",
+      "commits": 0
+    },
+    {
+      "month": "2024-01",
+      "commits": 0
+    },
+    {
+      "month": "2024-02",
+      "commits": 0
+    },
+    {
+      "month": "2024-03",
+      "commits": 0
+    },
+    {
+      "month": "2024-04",
+      "commits": 0
+    },
+    {
+      "month": "2024-05",
+      "commits": 0
+    },
+    {
+      "month": "2024-06",
+      "commits": 0
+    },
+    {
+      "month": "2024-07",
+      "commits": 0
+    },
+    {
+      "month": "2024-08",
+      "commits": 0
+    },
+    {
+      "month": "2024-09",
+      "commits": 0
+    },
+    {
+      "month": "2024-10",
+      "commits": 0
+    },
+    {
+      "month": "2024-11",
+      "commits": 13
+    },
+    {
+      "month": "2024-12",
+      "commits": 0
+    },
+    {
+      "month": "2025-01",
+      "commits": 0
+    },
+    {
+      "month": "2025-02",
+      "commits": 8
+    },
+    {
+      "month": "2025-03",
+      "commits": 0
+    },
+    {
+      "month": "2025-04",
+      "commits": 9
+    },
+    {
+      "month": "2025-05",
+      "commits": 7
+    },
+    {
+      "month": "2025-06",
+      "commits": 5
+    },
+    {
+      "month": "2025-07",
+      "commits": 9
+    },
+    {
+      "month": "2025-08",
+      "commits": 4
+    },
+    {
+      "month": "2025-09",
+      "commits": 1
+    },
+    {
+      "month": "2025-10",
+      "commits": 36
+    },
+    {
+      "month": "2025-11",
+      "commits": 45
+    },
+    {
+      "month": "2025-12",
+      "commits": 44
+    },
+    {
+      "month": "2026-01",
+      "commits": 16
+    },
+    {
+      "month": "2026-02",
+      "commits": 17
+    },
+    {
+      "month": "2026-03",
+      "commits": 15
+    },
+    {
+      "month": "2026-04",
+      "commits": 34
+    },
+    {
+      "month": "2026-05",
+      "commits": 53
+    },
+    {
+      "month": "2026-06",
+      "commits": 11
+    },
+    {
+      "month": "2026-07",
+      "commits": 72
+    },
+    {
+      "month": "2026-08",
+      "commits": 107
+    },
+    {
+      "month": "2026-09",
+      "commits": 19
+    }
+  ],
+  "opencre": [
+    {
+      "month": "2025-12",
+      "commits": 7
+    },
+    {
+      "month": "2026-01",
+      "commits": 14
+    },
+    {
+      "month": "2026-02",
+      "commits": 14
+    },
+    {
+      "month": "2026-03",
+      "commits": 5
+    },
+    {
+      "month": "2026-04",
+      "commits": 4
+    },
+    {
+      "month": "2026-05",
+      "commits": 0
+    },
+    {
+      "month": "2026-06",
+      "commits": 6
+    },
+    {
+      "month": "2026-07",
+      "commits": 19
+    },
+    {
+      "month": "2026-08",
+      "commits": 35
+    },
+    {
+      "month": "2026-09",
+      "commits": 0
+    }
+  ],
+  "opencreSource": "Commits authored on the default branch of OWASP/OpenCRE.",
+  "milestones": [
+    {
+      "date": "2022",
+      "label": "MuZiK, the RapidAPI pivot"
+    },
+    {
+      "date": "2024",
+      "label": "Chat app rebuilt on Redis Pub/Sub"
+    },
+    {
+      "date": "2025-11",
+      "label": "First OpenCRE PR"
+    },
+    {
+      "date": "2026-05",
+      "label": "GSoC begins"
+    },
+    {
+      "date": "2026-08",
+      "label": "GSoC ends · #2 contributor"
+    }
+  ]
+}

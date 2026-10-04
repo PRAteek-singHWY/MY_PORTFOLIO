@@ -1,87 +1,57 @@
+import React, { Suspense, useRef } from "react";
+import { useFrame } from "@react-three/fiber";
+import { OrbitControls, PerspectiveCamera, View, useGLTF } from "@react-three/drei";
 
-import React, { Suspense, useEffect, useState } from 'react'
+import CanvasLoader from "../Loader";
+import SceneBoundary from "./SceneBoundary";
+import { useCanOrbit, useReducedMotion } from "../../utils/media";
 
-// canavs is an empty canvas allowing us to place smething on it
-import { Canvas } from "@react-three/fiber"
+// Draco + WebP compressed from the original 3.0 MB scene.gltf.
+const MODEL = "/planet/scene.opt.glb";
+const DRACO = "/draco/";
 
+const Earth = ({ spin }) => {
+  const earthy = useGLTF(MODEL, DRACO);
+  const ref = useRef();
+  useFrame((_, delta) => {
+    if (spin && ref.current) ref.current.rotation.y += delta * 0.35;
+  });
+  return <primitive ref={ref} object={earthy.scene} scale={2.1} position-y={0} rotation-y={0} />;
+};
 
-//helpers which are going to allow us to draw on this canvas
-//useGLTF--> allows us to import 3-d models
-import { OrbitControls, Preload, useGLTF } from '@react-three/drei'
-
-import CanvasLoader from "../Loader"
-
-
-
-const Earth = () => {
-
-
-  const earthy = useGLTF("./planet/scene.gltf")
-  return (
-
-
-
-
-    <primitive
-      //primitive is used to pass objects
-      object={earthy.scene}
-      scale={2.1}
-      position-y={0}
-      rotation-y={0}
-
-
-    />
-
-  )
-}
-
-
-
-const EarthCanvas = () => {
-
+const EarthCanvas = ({ className }) => {
+  const canOrbit = useCanOrbit();
+  const reducedMotion = useReducedMotion();
 
   return (
-    <Canvas
-      frameloop="demand"
-      shadows
-      // the way we are looking at our 3d model from
-      dpr={[1, 2]}
+    <View className={className}>
+      <PerspectiveCamera
+        makeDefault
+        fov={45}
+        near={0.1}
+        far={200}
+        position={[-4, 3, 6]}
+        onUpdate={(camera) => camera.lookAt(0, 0, 0)}
+      />
+      <SceneBoundary>
+        <Suspense fallback={<CanvasLoader />}>
+          {canOrbit && (
+            <OrbitControls
+              makeDefault
+              autoRotate={!reducedMotion}
+              enableZoom={false}
+              enablePan={false}
+              maxPolarAngle={Math.PI / 2}
+              minPolarAngle={Math.PI / 2}
+            />
+          )}
+          <Earth spin={!canOrbit && !reducedMotion} />
+        </Suspense>
+      </SceneBoundary>
+    </View>
+  );
+};
 
-      gl={{ preserveDrawingBuffer: true }}
-      camera={
-        {
-          fov: 45,
-          near: 0.1,
-          far: 200,
-          position: [-4, 3, 6]
-        }}
-    >
+useGLTF.preload(MODEL, DRACO);
 
-      {/* having a loader while our model is loading */}
-      {/* suspense helps provide a smooth user experience by allowing you to define fallback content to be displayed while the component is loading. */}
-      <Suspense fallback=
-        {<CanvasLoader />} >
-        {/* here fallback means while it's loading u have to show what we have on our canvas loader  that is two decimal percentage */}
-
-
-        {/* and instead we gonna use orbit Controls */}
-        {/* orbit controls to move the model left and right */}
-        <OrbitControls
-          //auto rotate
-          autoRotate
-          // no zooming allowed
-          enableZoom={false}
-
-          // rotate the model at a specific angle min and max angle here it's min-90 :deg" and max-90 "deg"
-          maxPolarAngle={Math.PI / 2}
-          minPolarAngle={Math.PI / 2}
-        />
-        <Earth />
-        {/* <Preload all /> */}
-      </Suspense>
-
-    </Canvas>
-  )
-}
-
-export default EarthCanvas
+export default EarthCanvas;

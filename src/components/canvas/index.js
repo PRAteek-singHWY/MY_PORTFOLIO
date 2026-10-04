@@ -1,7 +1,17 @@
-import EarthCanvas from "./Earth";
-import BallCanvas1 from "./Ball";
-import BallCanvas2 from "./Ball2";
+import BallGrid from "./Ball";
 import ComputersCanvas from "./Computers";
+import EarthCanvas from "./Earth";
+import GsocEmblem from "./GsocEmblem";
+import SceneRoot from "./SceneRoot";
 import StarsCanvas from "./Stars";
+import ThresholdCanvas from "./Threshold";
 
-export { EarthCanvas, BallCanvas1, BallCanvas2,ComputersCanvas, StarsCanvas };
+export {
+  BallGrid,
+  ComputersCanvas,
+  EarthCanvas,
+  GsocEmblem,
+  SceneRoot,
+  StarsCanvas,
+  ThresholdCanvas,
+};

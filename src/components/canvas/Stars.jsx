@@ -1,19 +1,21 @@
 import React, { useState, useRef, Suspense } from "react";
 import { Canvas, useFrame } from "@react-three/fiber";
+import { useIsSmall, useReducedMotion } from "../../utils/media";
+import { themeColor } from "../../utils/theme";
 import { Points, PointMaterial, Preload } from "@react-three/drei";
 import * as random from "maath/random/dist/maath-random.esm";
 
-const Stars = (props) => {
+const Stars = ({ frozen, ...props }) => {
   const ref = useRef();
 
-  // 🔴 THE FIX IS HERE: Changed 5000 to 5001
-  // 5000 / 3 = 1666.66 (Causes NaN error -> White Screen)
-  // 5001 / 3 = 1667 (Perfect math -> Works)
+  // The buffer length must be a multiple of 3 (x, y, z per star), or maath
+  // writes NaN and the scene goes white. 2502 = 834 stars, half the original.
   const [sphere] = useState(() =>
-    random.inSphere(new Float32Array(5001), { radius: 1.2 })
+    random.inSphere(new Float32Array(2502), { radius: 1.2 })
   );
 
   useFrame((state, delta) => {
+    if (frozen) return;
     ref.current.rotation.x -= delta / 10;
     ref.current.rotation.y -= delta / 15;
   });
@@ -23,7 +25,7 @@ const Stars = (props) => {
       <Points ref={ref} positions={sphere} stride={3} frustumCulled {...props}>
         <PointMaterial
           transparent
-          color="#f272c8"
+          color={themeColor("--three-star", "#f272c8")}
           size={0.002}
           sizeAttenuation={true}
           depthWrite={false}
@@ -33,14 +35,22 @@ const Stars = (props) => {
   );
 };
 
+// Fixed to the viewport. It used to stretch over the whole page, making the
+// canvas as tall as the document (over 19,000px on a phone).
 const StarsCanvas = () => {
-  return (
-    <div className="w-full h-auto absolute inset-0 z-[-1]">
-      <Canvas camera={{ position: [0, 0, 1] }}>
-        <Suspense fallback={null}>
-          <Stars />
-        </Suspense>
+  const isSmall = useIsSmall();
+  const reducedMotion = useReducedMotion();
 
+  return (
+    <div className="fixed inset-0 z-[-1] pointer-events-none" aria-hidden="true">
+      <Canvas
+        camera={{ position: [0, 0, 1] }}
+        dpr={isSmall ? [1, 1.5] : [1, 2]}
+        frameloop={reducedMotion ? "demand" : "always"}
+      >
+        <Suspense fallback={null}>
+          <Stars frozen={reducedMotion} />
+        </Suspense>
         <Preload all />
       </Canvas>
     </div>

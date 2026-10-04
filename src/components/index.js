@@ -1,33 +1,37 @@
 import {
-  EarthCanvas,
-  BallCanvas1,
-  BallCanvas2,
+  BallGrid,
   ComputersCanvas,
+  EarthCanvas,
+  GsocEmblem,
+  SceneRoot,
   StarsCanvas,
+  ThresholdCanvas,
 } from "./canvas";
 import Hero from "./Hero";
 import Navbar from "./Navbar";
+import Highlights from "./Highlights";
 import About from "./About";
+import Journey from "./Journey";
+import Writing from "./Writing";
 import Tech from "./Tech";
-import Experience from "./Experience";
-import Works from "./Works";
 import Feedbacks from "./Feedbacks";
 import Contact from "./Contact";
-import android from "./android.webp";
 
 export {
   Hero,
   Navbar,
+  Highlights,
   About,
+  Journey,
+  Writing,
   Tech,
-  Experience,
-  Works,
-  android,
   Feedbacks,
   Contact,
-  EarthCanvas,
-  BallCanvas1,
-  BallCanvas2,
+  BallGrid,
   ComputersCanvas,
+  EarthCanvas,
+  GsocEmblem,
+  SceneRoot,
   StarsCanvas,
+  ThresholdCanvas,
 };
